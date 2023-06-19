@@ -1,4 +1,4 @@
-package Aplicacao;
+package aplicacao;
 
 import entidades.*;
 import entidades.enums.Sexo;
