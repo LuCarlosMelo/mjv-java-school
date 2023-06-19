@@ -4,16 +4,16 @@ public class DadosProfissionais {
     private String profissao;
     private String empresa;
     private double salario;
-    private boolean empregoAtual;
+    private boolean empregado;
 
     public DadosProfissionais() {
     }
 
-    public DadosProfissionais(String profissao, String empresa, double salario, boolean empregoAtual) {
+    public DadosProfissionais(String profissao, String empresa, double salario, boolean empregado) {
         this.profissao = profissao;
         this.empresa = empresa;
         this.salario = salario;
-        this.empregoAtual = empregoAtual;
+        this.empregado = empregado;
     }
 
     public String getProfissao() {
@@ -40,11 +40,24 @@ public class DadosProfissionais {
         this.salario = salario;
     }
 
-    public boolean isEmpregoAtual() {
-        return empregoAtual;
+    public boolean temEmrego() {
+        return empregado;
     }
 
-    public void setEmpregoAtual(boolean empregoAtual) {
-        this.empregoAtual = empregoAtual;
+    public void setEmpregado(boolean empregado) {
+        this.empregado = empregado;
+    }
+
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append(getProfissao() + "; ");
+        stringBuilder.append(getEmpresa() + "; ");
+        stringBuilder.append(getSalario() + "; ");
+
+        String empregado = (temEmrego()) ? "Sim" : "Não";
+        stringBuilder.append(empregado + "; ");
+
+        return stringBuilder.toString();
     }
 }

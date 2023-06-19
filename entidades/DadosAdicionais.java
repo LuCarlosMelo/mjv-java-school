@@ -5,17 +5,17 @@ import java.util.List;
 
 public class DadosAdicionais {
 
-    private List<String> habilidades = new ArrayList<>();
-    private double valorMinimoSalario;
-    private double valorMaximoSalario;
+    private List<String> habilidades;
+    private double pretensaoMinima;
+    private double pretensaoMaxima;
 
     public DadosAdicionais() {
     }
 
-    public DadosAdicionais(List<String> habilidades, double valorMinimoSalario, double valorMaximoSalario) {
+    public DadosAdicionais(List<String> habilidades, double pretensaoMinima, double pretensaoMaxima) {
         this.habilidades = habilidades;
-        this.valorMinimoSalario = valorMinimoSalario;
-        this.valorMaximoSalario = valorMaximoSalario;
+        this.pretensaoMinima = pretensaoMinima;
+        this.pretensaoMaxima = pretensaoMaxima;
     }
 
     public List<String> getHabilidades() {
@@ -26,19 +26,33 @@ public class DadosAdicionais {
         this.habilidades = habilidades;
     }
 
-    public double getValorMinimoSalario() {
-        return valorMinimoSalario;
+    public double getPretensaoMinima() {
+        return pretensaoMinima;
     }
 
-    public void setValorMinimoSalario(double valorMinimoSalario) {
-        this.valorMinimoSalario = valorMinimoSalario;
+    public void setPretensaoMinima(double pretensaoMinima) {
+        this.pretensaoMinima = pretensaoMinima;
     }
 
-    public double getValorMaximoSalario() {
-        return valorMaximoSalario;
+    public double getPretensaoMaxima() {
+        return pretensaoMaxima;
     }
 
-    public void setValorMaximoSalario(double valorMaximoSalario) {
-        this.valorMaximoSalario = valorMaximoSalario;
+    public void setPretensaoMaxima(double pretensaoMaxima) {
+        this.pretensaoMaxima = pretensaoMaxima;
+    }
+
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+
+//        for (String obj : getHabilidades()){
+//
+//        }
+
+        stringBuilder.append(getHabilidades() + "; ");
+        stringBuilder.append(getPretensaoMinima() + "; ");
+        stringBuilder.append(getPretensaoMaxima());
+
+        return stringBuilder.toString();
     }
 }

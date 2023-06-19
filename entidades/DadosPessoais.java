@@ -1,13 +1,16 @@
 package entidades;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class DadosPessoais {
     private String nome;
     private String cpf;
-    private String dataNascimento;
+    private LocalDate dataNascimento;
     private String sexo;
 
     public DadosPessoais(){}
-    public DadosPessoais(String nome, String cpf, String dataNascimento, String sexo) {
+    public DadosPessoais(String nome, String cpf, LocalDate dataNascimento, String sexo) {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
@@ -30,11 +33,11 @@ public class DadosPessoais {
         this.cpf = cpf;
     }
 
-    public String getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -46,5 +49,13 @@ public class DadosPessoais {
         this.sexo = sexo;
     }
 
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
 
+        stringBuilder.append(getNome() + "; ");
+        stringBuilder.append(getDataNascimento() + "; ");
+        stringBuilder.append(getCpf() + "; ");
+        stringBuilder.append(getSexo() + "; ");
+        return stringBuilder.toString();
+    }
 }

@@ -67,4 +67,17 @@ public class Endereco {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append(getLogradouro() + "; ");
+        stringBuilder.append(getNumero() + "; ");
+        stringBuilder.append(getComplemento() + "; ");
+        stringBuilder.append(getBairro() + "; ");
+        stringBuilder.append(getCidade() + "; ");
+        stringBuilder.append(getEstado()+ "; " );
+
+        return stringBuilder.toString();
+    }
 }
